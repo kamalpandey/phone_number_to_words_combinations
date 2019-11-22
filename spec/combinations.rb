@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../lib/phone_number_to_words/possible_combinations.rb'
+
 describe PossibleCombinations do
   let(:phone) { '6686787825' }
   let(:min_length) { 3 }
