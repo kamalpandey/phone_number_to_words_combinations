@@ -18,8 +18,10 @@ module DictionaryUtils
 
   def self.load_dictionary
     dictionary = []
-    File.foreach(DICTIONARY_PATH) do |word|
-      dictionary << word.strip.downcase!
+    File.open(DICTIONARY_PATH).each_line do |line|
+      next if line.strip.length < 3 || line.strip.length > 10
+
+      dictionary << line.strip.downcase!
     end
     dictionary_to_hash(dictionary)
   end
