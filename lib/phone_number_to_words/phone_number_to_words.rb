@@ -63,7 +63,7 @@ class PhoneNumberToWords
       first_combination, *rest_combinations = combinations
       @final_result << first_combination.product(*rest_combinations)
     end
-    @final_result.flatten(1).delete_if { |array| array.join.length < 10 } # removing if the combined word length is less than 10
+    @final_result.flatten(1).delete_if { |array| array.join.length < MAX_LENGTH } # removing if the combined word length is less than 10
   end
 
   def generate_words(phone_number)
@@ -80,7 +80,7 @@ class PhoneNumberToWords
   end
 
   def valid_number?(phone_number)
-    phone_number.gsub(/[^2-9]/, '').length == 10
+    phone_number.gsub(/[^2-9]/, '').length == MAX_LENGTH
   end
 
   attr_accessor :phone_number, :possible_combinations, :dictionary
