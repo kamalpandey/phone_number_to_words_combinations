@@ -16,14 +16,8 @@ class PhoneNumberToWords
   end
 
   def perform!
-    load_dictionary
-    return unless takes_input_and_validate
-
-    start_time = Time.now
+    takes_input_and_validate
     print(generate_words(phone_number))
-    finish_time = Time.now
-    difference = finish_time - start_time
-    puts difference
   end
 
   def takes_input_and_validate
