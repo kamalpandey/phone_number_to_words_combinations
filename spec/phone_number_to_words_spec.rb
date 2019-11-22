@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative '../lib/phone_number_to_words/phone_number_to_words.rb'
+
 describe PhoneNumberToWords do
   let(:phone1) { '6686787825' }
   let(:phone2) { '2282668687' }
