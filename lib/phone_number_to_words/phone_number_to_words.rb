@@ -17,7 +17,8 @@ class PhoneNumberToWords
 
   def perform!
     takes_input_and_validate
-    print(generate_words(phone_number))
+    print('Results', generate_words(phone_number))
+    puts("\n")
   end
 
   def takes_input_and_validate
@@ -40,7 +41,8 @@ class PhoneNumberToWords
   end
 
   def load_dictionary
-    @dictionary || DictionaryUtils.load_dictionary
+    @dictionary = DictionaryUtils.load_dictionary
+    @dictionary
   end
 
   def get_words_from_dictionary(number)
